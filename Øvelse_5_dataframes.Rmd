@@ -1,0 +1,77 @@
+---
+title: "Øvelse_5_dataframes"
+author: "Tobias Skjærlund"
+date: "2024-11-11"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Øvelse 5.1 Dataframes
+
+```{r}
+# 1 lav fire vectorer: navn med 10 charachters,højde med 10 tal, vegetar med 10 logical, vægt med 10 tal
+
+# navn <- 
+# højde <- 
+# vegetar <-
+# vægt <- 
+
+# 2 brug data.frame() til at lave en dataframe der hedder min_dataframe
+#brug ?data.frame til hjælp
+
+
+# 3 Hvad gør funktionen View()?
+
+# 4 Hvad gør funktionen summary()? 
+
+# 5 Prøv at plotte højde mod vægt brug ?plot til hjælp
+
+
+```
+
+## Øvelse 5.2
+
+Brug read_xlsx() funktionen til at importere data i en dataframe. Kald den svar_df Hint: svar_df <- read_xlsx("Din sti")
+
+```{r}
+
+```
+
+Prøv at bruge funktionerne dim(), View() og summary() til at få et overblik over data. Læg mærke til at View() har et stort V.
+
+```{r}
+
+```
+
+Hvilken datatype er de forskellige kolonner? Hvor mange kolonner og rækker er der? Tror I det er nemt at arbejde med dataen?
+
+
+```{r}
+# Prøv at sortere svarene i kolonnen rige med funktionen sort() (hint: husk $)
+
+# Ekstra opgave, hvis du har tid
+
+# funktionen aggregtate() kan tælle antallet af forskellige grupper i en vector
+# Her er et eksempel med kolonnen træt
+
+træt_count <- aggregate(svar_df$træt,by=list(svar_df$træt),FUN=length)
+
+# Colnames kan ændre kolonne navne eks:
+colnames(træt_count)<- c("træt_skala","antal")
+
+# Funktionen barplot kan plotte data
+barplot(træt_count$antal, names.arg = træt_count$træt_skala)
+
+
+# Prøv at lave et plot for kolonnen rige
+
+# rige_count <- aggregate()
+# colnames() <- c()
+# barplot()
+
+
+```
+

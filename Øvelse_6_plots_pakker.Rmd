@@ -1,0 +1,150 @@
+---
+title: "Øvelse_6_visualisering_pakker"
+author: "Tobias Skjærlund"
+date: "2024-11-11"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+Hvis ikke det er lykkedes før så importer datasættet:
+```{r}
+library(readxl)
+svar_df <- read_xlsx("data/data_2024.xlsx")
+```
+
+Lad os prøve at visualisere vores data:
+
+Vi vil gerne vide hvor mange der er i hver gruppe. Der er en funktion i R der gør netop det.
+
+xtabs(~ kolonnenavn, data = dataframe)
+
+Gå igennem koden i eksemplet herunder:
+
+```{r}
+# Først et eksempel:
+
+# antal_rige <- xtabs(~ rige, data = svar_df)
+
+# Prøv at se hvordan antal_rige ser ud, ved at køre objektet
+
+# Lad os sortere og tage de 5 største værdier, decreasing = TRUE  fordi vi sortere fra størst til mindst og [1:5] for at tage de 5 første objekter
+
+# antal_rige <- sort(antal_rige, decreasing = TRUE)[1:5]
+
+# funktionen pie laver et lagkagediagram
+# pie(antal_rige)
+
+```
+
+
+I kan nu selv gøre det samme med yndlingsfarve, denne gang med de 8 mest hyppige farver og et barplot 
+```{r}
+# antal_farve <- xtabs(~, data =)
+
+# Prøv at se hvordan antal_farve ser ud, ved at køre objektet
+
+# Sortere tag de 8 største værdier, decreasing = TRUE  fordi vi sortere fra størst til mindst og [1:8] for at tage de 8 første objekter
+
+# antal_farve <- sort()[]
+
+# funktionen barplot laver et søjlediagram
+# barplot()
+
+# Kig på barplottet og husk tilbage til øvelsen med strings, hvad er galt?
+
+```
+
+Ekstra opgave hvis du har tid: 
+Argumentet col = kan bruges til at ændre farver barplot(data, col="blue") Prøv at ændre farven til rød
+
+```{r}
+# barplot()
+```
+
+Ekstra opgave hvis du har tid: 
+Der er 8 kolonner så hvis vi giver R 8 farver får hver bar forskellige farver. I stedet for at skrive navne på 8 farver, kan man give R 8 tal i stedet. Det kan man fordi alle farver har et nummer eks. 1 = sort, 2 = laks, 3 = grøn osv.
+
+Giv funktionen en vector med seks tal i: barplot(data, col = en vector med tal fra 1 til 6.)
+
+```{r}
+# barplot()
+```
+
+## Scatter plot
+
+Jeg vil gerne undersøge om kaffe gør folk trætte. Jeg vil derfor gerne lave et scatterplot, hvor jeg bruger kolonnen kaffe og kolonnen træt.
+Undersøg de data i de to kolonner og vurder om det er muligt
+```{r}
+
+```
+
+Brug plot funktionen til at plotte ?plot for hjælp 
+```{r}
+plot()
+
+# Prøv at lave et boxplot
+boxplot(svar_df$træt ~ svar_df$kaffe)
+
+# Hvad er forskellen?
+```
+
+
+## Tidyverse
+
+Det er normalt at bruge tidyverse til at bryde med data og visualisere det. I tidyverse, er der en funktion count() som kan tælle hvor mange elementer, der er i en gruppe.
+
+Først lad os prøve at installere tidyverse pakken
+
+```{r}
+# install.packages("tidyverse") slet linjen efter den er kørt
+
+```
+
+Vi skal bruge library() til at få tidyverse ind i scriptet
+
+```{r}
+
+```
+
+Tidyverse har en lidt anderledes syntax... og bruger pipelines %>% frygt ej I kan lære det en anden dag, men prøv at køre koden:
+
+```{r}
+# koden tager data og tæller antallet i hver gruppe og filtrere for værdier over 2 
+antal_organisme_metode_2 <- svar_df %>% count(organisme)%>% filter(n>2)
+antal_organisme_metode_2
+```
+
+Tidyverse kan også plotte med ggplot() men bruger også lidt anderledes syntax Prøv at køre alle tre linjer kode samtidigt:
+
+```{r}
+ggplot(data= antal_organisme_metode_2, aes(x=organisme,y=n))+
+   geom_bar(stat = "identity",aes(fill =organisme))+
+   theme_classic()
+```
+
+Ekstra opgave hvis du har tid: 
+
+Taxanomien for jeres yndlingsorganisme er hentet direkte fra GBIF.org
+```{r}
+# Data importeres fra en .csv fil og tomme værdier i kolonnen order udelades
+gbif_navn <- read.csv('data/species.csv')%>%filter(order!="")
+
+# koden tager data og tæller antallet i hver gruppe og filtrerer for værdier over 2 
+antal_order_metode_2 <- gbif_navn  %>% count(order)%>% filter(n>2)%>% arrange(by=desc(n))
+
+ggplot(data= antal_order_metode_2, aes(x=order,y=n))+
+   geom_bar(stat = "identity",aes(fill =order))+
+   theme(axis.text.x = element_text(angle = 90))
+```
+
+I gbif_navn er der flere taxonomiske niveauer prøv at lave det samme plot for family
+
+```{r}
+
+```
+
+

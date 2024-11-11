@@ -1,0 +1,120 @@
+---
+title: "Øvelse_3_strings_logicals"
+author: "Tobias Skjærlund"
+date: "2024-11-11"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Øvelse 3.0 Strings
+
+Denne øvelse handler om datatypen character
+
+
+```{r}
+# 1 Lav en variable der hedder navn der indeholder teksten "John"
+
+
+
+# 2 Lav en variabel der hedder hobby som indeholder "Fugle"
+
+
+
+# 3 Prøv at lægge navn og hobby sammen
+
+
+
+# 4 lav en variabel der hedder sætning som indeholder en hel sætning
+
+
+
+# Her er to variable Kør linjerne:
+
+z <- "1" 
+x <- "1"
+
+# 5 Læg z og x sammen, hvad sker der og hvordan kan problemet løses?
+```
+
+## R Øvelse 3.1 Strings 
+Denne øvelse bruger jeres egen data
+
+Jeg har hentet jeres data fra datafilen for jer med følgende kode:
+
+# library(readxl)
+# data_2024 <- read_xlsx('data/data_2024.xlsx')
+# farve_2024 <- sort(unique(data_2024$farve))
+
+I behøver ikke gøre det. :)
+
+Herunder kan i se de forskellige input som I har skrevet: 
+
+```{r}
+# 6 Jeres yndlingsfarver fra 122 inputs, hvert unikke input er kun skrevet 1 gang:
+
+farve_2024 <- c("#0041C2", "50% af alle farver", "All of them! (undtagen grå. Men det er jo ikke en farve)", 
+"blå", "Blå", "Blå/Grøn", "Blå/gul/lyserød", "Blå?", "brun", 
+"Cyan", "grøn", "Grøn", "Grøn selvfølgelig!", "Grøn:)", 
+"Gul", "Guld", "Himmelblå", "Indigo", "lilla", "Lilla", "Lyseblå", 
+"lyserød", "Lyserød", "Lyserød💖", "Mørkeblå", "mørkeblå eller bordeaux", 
+"orange", "Orange", "Orange (like the sunset)", "rød", "Rød", 
+"sort", "Terracotta", "Turkis", "tyrkis")
+
+# 7 Hvad er udfordringen ved at finde ud af hvilken farve flest bedst kan lide?
+
+
+# 8 Ekstra opgave, hvis du har tid. Prøv at lav meningsfulde grupper fra jeres data. Ved at bruge funktionen c() som vi kommer tilbage til
+
+grøn <- c("grøn","Grøn","Grøn selvfølgelig!","Grøn:)")
+# blå <- c()
+# osv.
+
+# Hvad er udfordringen ved dette?
+
+```
+
+## R Øvelse 3.2 Logicals/Booleans
+
+```{r}
+# Logicals har en værdi FALSE = 0 TRUE = 1 
+
+# 9 Prøv at lægge TRUE sammen med TRUE
+
+# 10 Prøv TRUE+TRUE+FALSE
+
+# 11 Her er jeres svar på spørgsmålet: Er Danmark et grønt foregangsland?
+
+dk_grøn <- c(FALSE, FALSE, FALSE, TRUE, FALSE, FALSE, FALSE, FALSE, FALSE, 
+FALSE, FALSE, TRUE, TRUE, TRUE, FALSE, FALSE, FALSE, FALSE, TRUE, 
+FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, TRUE, TRUE, TRUE, FALSE, 
+TRUE, FALSE, TRUE, FALSE, TRUE, TRUE, FALSE, TRUE, FALSE, TRUE, 
+TRUE, TRUE, TRUE, FALSE, TRUE, FALSE, FALSE, TRUE, TRUE, FALSE, 
+TRUE, TRUE, TRUE, TRUE, FALSE, TRUE, FALSE, TRUE, FALSE, FALSE, 
+FALSE, FALSE, TRUE, FALSE, FALSE, FALSE, TRUE, FALSE, FALSE, 
+FALSE, FALSE, TRUE, TRUE, FALSE, TRUE, TRUE, TRUE, FALSE, TRUE, 
+TRUE, TRUE, TRUE, TRUE, FALSE, TRUE, FALSE, FALSE, FALSE, TRUE, 
+FALSE, FALSE, TRUE, FALSE, FALSE, TRUE, TRUE, TRUE, FALSE, TRUE, 
+FALSE, FALSE, FALSE, FALSE, TRUE, TRUE, TRUE, TRUE, FALSE, TRUE, 
+TRUE, FALSE, FALSE, TRUE, TRUE, FALSE, TRUE, TRUE, FALSE, TRUE, 
+TRUE, TRUE, FALSE, FALSE)
+
+# 12 Prøv at bruge funktionen: sum() på objektet dk_grøn for at se hvor mange der har svaret Sandt til spørgsmålet.
+
+
+# 13 Prøv at bruge funktionen length() på dk_grøn for at se hvor mange svar der er i alt
+
+
+# 14 Er der flest der har svaret sandt eller falskt?
+
+
+# 15 Ekstra opgave hvis du har tid. mean() funktionen giver gennemsnittet. Hvordan kan outputtet tolkes hvis mean() tages af dk_grøn
+
+```
+
+
+
+
+

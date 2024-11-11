@@ -1,0 +1,70 @@
+---
+title: "Øvelse_4_vector"
+author: "Tobias Skjærlund"
+date: "2024-11-11"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Øvelse 4.1 Vector
+
+
+```{r}
+# 1 lav en vector og gem den som numeric_vector med værdierne 1 til 10 brug
+
+
+# 2 Prøv at hente tallet 5 ud af numeric_vector ved at bruge [ ]
+
+
+# 3 prøv at lave en vector der hedder charachter_vector med bogstaver a til j
+
+
+# 4 R har en indbygget vector der hedder letters prøv letters[1:10]
+
+
+# 5 prøv at hente "b" ud af charachter_vector ved at bruge []
+
+
+# 6 prøv at hente a til c ud ved at bruge [] hint: brug kolon
+
+
+# 7 prøv at hente b og h ud ved at bruge [] hint: brug en vector
+
+
+```
+
+## Øvelse 4.2 Vectorer og funktioner
+Her skal i bruge funktioner som: mean(), unique(), sort(), length(), sum(), min(), median og max() brug ?funktion til at få hjælp
+
+```{r}
+# lav en vector med navnet min_vector med værdier 1,1,3,4,5,4,5,1,8,12,2,3,6,7,8,1
+
+
+# Hvad er gennemsnittet af min_vector?
+
+
+# Hvad er den højeste værdi i min_vector?
+
+
+# Prøv at sortere min_vector fra lille til stor?
+
+
+# Hvad er medianen i min_vector?
+
+
+# Hvor mange elementer er der i min_vector?
+
+
+# Hvad er det højeste tal divideret med det laveste tal i min_vector?
+
+
+# Hvad gør funktionen unique()?
+
+
+# Ekstra opgave hvis du har tid kan du printe min_vector sorteret fra størst til mindst
+
+```
+
